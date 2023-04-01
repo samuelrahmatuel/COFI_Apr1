@@ -11,7 +11,7 @@ def index():
         return render_template('main.html', text=text, prediction=prediction)
     return render_template('main.html')
 
-@app.route('/download', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def download():
     username = request.args.get('username')
     password = request.args.get('password')
@@ -31,6 +31,23 @@ def download():
     else:
 
         return "username salah"
+
+@app.route('/register', methods=['POST'])
+def register():
+    new_username = request.args.get('new_username')
+    new_password = request.args.get('new_password')
+
+    list_username = ['d', 'e', 'f']
+    list_password = ['1', '2', '3']
+
+    if new_username in list_username:
+        return "Username sudah terdaftar"
+
+    else:
+        list_username.append(new_username)
+        list_password.append(new_password)
+
+        return f"Registrasi Berhasil. Halo, {new_username}!"
 
 if __name__ == '__main__':
     app.run(debug=True, port=8080)
