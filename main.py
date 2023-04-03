@@ -3,7 +3,7 @@ from utils import predict_text
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/text_sentiment', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         text = request.form['text']

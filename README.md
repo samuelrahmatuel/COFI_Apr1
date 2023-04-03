@@ -1,1 +1,1 @@
-# COFI_Apr1
+# Simple Text Sentiments Generator
